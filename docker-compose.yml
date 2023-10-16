@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  fetch-rewards:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: fetch-rewards-docker
+    container_name: fetch-receipt-process
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      PORT: ${PORT}
